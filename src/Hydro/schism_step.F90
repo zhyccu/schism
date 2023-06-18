@@ -1370,7 +1370,9 @@
           if(ifltype(k)==1) then
             icount=icount+1
             if(icount>nfltype) call parallel_abort('STEP: wrong counting 2')
-            qthcon(k)=(1.d0-rat)*ath(icount,1,1,2)+rat*ath(icount,1,2,2)
+            !!!!!zhy, use nwm_discharge replace ath
+            qthcon(k)=nwm_discharge(icount)
+            !!qthcon(k)=(1.d0-rat)*ath(icount,1,1,2)+rat*ath(icount,1,2,2)
           endif
         enddo !k
       endif !nfltype
