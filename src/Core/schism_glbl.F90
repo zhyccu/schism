@@ -383,6 +383,10 @@ module schism_glbl
                                   &qthcon(:),uthnd(:,:,:),vthnd(:,:,:), &
                                   &ath(:,:,:,:),carea(:),clen(:),eta_mean(:),q_block(:),vnth_block(:,:), &
                                   &dir_block(:,:),q_block_lcl(:)
+
+  !!!!!zhy, data transfer from NWM
+  real(rkind),save,allocatable,target :: nwm_discharge(:)
+
   real(4),save,allocatable :: ath2(:,:,:,:,:) !used to read *.nc for b.c. time series
   real(4),save,allocatable :: ath3(:,:,:,:) !used to read source/sink inputs
 
